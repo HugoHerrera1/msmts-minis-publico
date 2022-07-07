@@ -25,7 +25,6 @@ public class AvisosMpServicesImpl implements AvisosMpServices {
     @Override
     public String insertAvisoMp(AvisoMPRequest avisoMp) {
         InsertResponse ir = new InsertResponse();
-        // Gson jsonInsert = new Gson();
         try {
             MtstAvisosMp avisosMp = transform.buildInsert(avisoMp);
             ir.setStatus("OK");
