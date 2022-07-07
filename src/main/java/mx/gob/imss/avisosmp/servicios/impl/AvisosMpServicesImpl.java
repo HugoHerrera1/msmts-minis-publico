@@ -2,10 +2,7 @@ package mx.gob.imss.avisosmp.servicios.impl;
 
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
-import mx.gob.imss.avisosmp.dto.AvisoMPRequest;
-import mx.gob.imss.avisosmp.dto.AvisosMpList;
-import mx.gob.imss.avisosmp.dto.ConsultaFechasResponse;
-import mx.gob.imss.avisosmp.dto.InsertResponse;
+import mx.gob.imss.avisosmp.dto.*;
 import mx.gob.imss.avisosmp.modelo.MtstAvisosMp;
 import mx.gob.imss.avisosmp.repositorios.AvisosMpRepository;
 import mx.gob.imss.avisosmp.servicios.AvisosMpServices;
@@ -44,7 +41,7 @@ public class AvisosMpServicesImpl implements AvisosMpServices {
     }
 
     @Override
-    public String findVolantesByFechas(String fechaInicio, String fechaFin) {
+    public String findAvisosByFechas(String fechaInicio, String fechaFin) {
         ConsultaFechasResponse avisosMpFechas = new ConsultaFechasResponse();
         try {
             List<AvisosMpList> avisosMpLists = new ArrayList<>();
@@ -61,6 +58,24 @@ public class AvisosMpServicesImpl implements AvisosMpServices {
             avisosMpFechas.setMensaje(e.getMessage());
             avisosMpFechas.setDatosAvisosMp(new ArrayList<>());
             return jsonResponse.toJson(avisosMpFechas);
+        }
+    }
+
+    @Override
+    public String findAvisosById(Integer idAviso) {
+        ConsultaVolanteIdResponse consultaID = new ConsultaVolanteIdResponse();
+        try {
+            MtstAvisosMp avisoMp = avisosMpRepo.findAvisosMpById(idAviso);
+            DetalleAvisoMp detail = transform.buildDetalleResponse(avisoMp);
+            consultaID.setStatus("OK");
+            consultaID.setMensaje("Operación correcta");
+            consultaID.setDatosAvisoMp(detail);
+            return jsonResponse.toJson(consultaID);
+        } catch (Exception e) {
+            consultaID.setStatus("Error");
+            consultaID.setMensaje(e.getMessage());
+            consultaID.setDatosAvisoMp(new DetalleAvisoMp());
+            return jsonResponse.toJson(consultaID);
         }
     }
 }

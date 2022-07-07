@@ -6,5 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface AvisosMpServices {
 String insertAvisoMp(AvisoMPRequest avisoMp);
-String findVolantesByFechas(String fechaInicio, String fechaFin);
+String findAvisosByFechas(String fechaInicio, String fechaFin);
+String findAvisosById(Integer idAviso);
 }

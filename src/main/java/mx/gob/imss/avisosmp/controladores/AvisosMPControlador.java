@@ -30,7 +30,16 @@ public class AvisosMPControlador {
     @GetMapping(path = "/findAvisosMpByFechas/{fechaInicial}/{fechaFinal}", produces = "application/json")
     public ResponseEntity findAvisosByFechas(@PathVariable String fechaInicial, @PathVariable String fechaFinal) {
         try {
-            return new ResponseEntity(avisosServices.findVolantesByFechas(fechaInicial, fechaFinal), HttpStatus.OK);
+            return new ResponseEntity(avisosServices.findAvisosByFechas(fechaInicial, fechaFinal), HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping(path = "/findAvisoById/{idAviso}", produces = "application/json")
+    public ResponseEntity findDetalleAviso(@PathVariable Integer idAviso) {
+        try {
+            return new ResponseEntity(avisosServices.findAvisosById(idAviso), HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
         }

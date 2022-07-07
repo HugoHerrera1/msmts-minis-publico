@@ -3,7 +3,10 @@ package mx.gob.imss.componentes;
 import lombok.extern.slf4j.Slf4j;
 import mx.gob.imss.avisosmp.dto.AvisoMPRequest;
 import mx.gob.imss.avisosmp.dto.AvisosMpList;
+import mx.gob.imss.avisosmp.dto.DetalleAvisoMp;
 import mx.gob.imss.avisosmp.modelo.MtstAvisosMp;
+import mx.gob.imss.avisosmp.modelo.ServiciosModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.Time;
@@ -11,11 +14,14 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 @Slf4j
 @Component
 public class TransformaObjetos {
+    @Autowired
+    AgendaDigitalCliente cliente;
 
     public MtstAvisosMp buildInsert(AvisoMPRequest avisoMPRequest) throws ParseException {
         MtstAvisosMp mp = new MtstAvisosMp();
@@ -53,6 +59,34 @@ public class TransformaObjetos {
             response.setNombrePaciente("");
             response.setFechaElaboracion("");
             return response;
+        }
+    }
+
+    public DetalleAvisoMp buildDetalleResponse(MtstAvisosMp avisosMp) {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DetalleAvisoMp detail = new DetalleAvisoMp();
+        try {
+            detail.setIdAvisoMp(avisosMp.getId().intValue());
+            detail.setFechaElaboracion(dateFormat.format(avisosMp.getFecElaboracion()));
+            detail.setDelegacionMunicipio(avisosMp.getDesDelegacionMunicipio());
+            detail.setAgenciaMp(avisosMp.getDesAgenciaMp());
+            detail.setNombrePaciente(avisosMp.getNomPaciente());
+            detail.setUnidadMedica(avisosMp.getDesUnidadMedica());
+            detail.setCveEspecialidad(avisosMp.getCveEspecialidad());
+            List<ServiciosModel> servicios = cliente.getServicio(avisosMp.getCveEspecialidad());
+            String nombreServicio = servicios.isEmpty() ? "No se encontro registro" : servicios.get(0).getDes_especialidad();
+            detail.setEspecialidad(nombreServicio);
+            detail.setCama(avisosMp.getCveCama());
+            detail.setFechaIngreso(avisosMp.getFecIngreso().toString());
+            detail.setHoraIngreso(avisosMp.getTimIngreso().toString());
+            detail.setLesionesPaciente(avisosMp.getDesLesionesPaciente());
+            detail.setNombreMedico(avisosMp.getNomMedico());
+            detail.setMatriculaMedico(avisosMp.getDesMatriculaMedico());
+            detail.setNombreTrabajadorSocial(avisosMp.getNomTrabajadorSocial());
+            detail.setMatriculaTrabajadorSocial(avisosMp.getDesMatriculaTs());
+            return detail;
+        } catch (Exception e) {
+            return new DetalleAvisoMp();
         }
     }
 }
