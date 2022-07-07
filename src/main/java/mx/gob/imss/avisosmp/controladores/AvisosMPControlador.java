@@ -27,6 +27,7 @@ public class AvisosMPControlador {
         }
     }
 
+    @GetMapping(path = "/findAvisosMpByFechas/{fechaInicial}/{fechaFinal}", produces = "application/json")
     public ResponseEntity findAvisosByFechas(@PathVariable String fechaInicial, @PathVariable String fechaFinal) {
         try {
             return new ResponseEntity(avisosServices.findVolantesByFechas(fechaInicial, fechaFinal), HttpStatus.OK);

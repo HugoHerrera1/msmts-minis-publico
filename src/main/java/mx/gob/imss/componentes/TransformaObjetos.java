@@ -44,7 +44,7 @@ public class TransformaObjetos {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         AvisosMpList response = new AvisosMpList();
         try {
-            response.setIdAvisoMp(response.getIdAvisoMp());
+            response.setIdAvisoMp(mtstAvisosMp.getId().intValue());
             response.setNombrePaciente(mtstAvisosMp.getNomPaciente());
             response.setFechaElaboracion(dateFormat.format(mtstAvisosMp.getFecElaboracion()));
             return response;
