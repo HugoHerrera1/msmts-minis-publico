@@ -54,6 +54,5 @@ public class TransformaObjetos {
             response.setFechaElaboracion("");
             return response;
         }
-
     }
 }
