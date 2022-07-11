@@ -19,7 +19,7 @@ import net.sf.jasperreports.engine.JasperRunManager;
 @Service
 public class ReporteAvisosMPServicioImpl implements ReporteAvisosMPServicio {
 	
-	@Override
+	 @SuppressWarnings("finally")
 	public byte[] imprimeAvisosMP (ReporteAvisosMPDto reporte) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		byte[] filePdf = new byte [0];
@@ -41,8 +41,8 @@ public class ReporteAvisosMPServicioImpl implements ReporteAvisosMPServicio {
 	        parameters.put("matriculaMed", reporte.getMatriculaMed());
 	        parameters.put("nomTS", reporte.getNomTS());
 	        parameters.put("matTS", reporte.getMatTS());
-	        parameters.put("imgSource2", new ClassPathResource("reports/logo_imss1.jpg").getPath());
-	        parameters.put("imgSource", new ClassPathResource("reports/logo_imss2.jpg").getPath());
+	        parameters.put("imgSource2", new ClassPathResource("reports/logo_imss2.jpg").getPath());
+	        parameters.put("imgSource", new ClassPathResource("reports/logo_imss1.jpg").getPath());
 	        
 	        try {
 
