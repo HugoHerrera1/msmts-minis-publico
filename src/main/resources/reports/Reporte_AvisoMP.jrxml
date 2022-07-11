@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_AvisoMP" language="groovy" pageWidth="740" pageHeight="976" columnWidth="700" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bd7344d4-d6bc-42f4-a76f-07fb5e111a15">
-	<property name="ireport.zoom" value="1.7715610000000162"/>
+	<property name="ireport.zoom" value="1.6105100000000159"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="594"/>
+	<property name="ireport.y" value="470"/>
 	<parameter name="estado" class="java.lang.String"/>
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
@@ -244,19 +244,23 @@ en la cama ___________________ con fecha y hora de ingreso _____________________
 				<textFieldExpression><![CDATA[$P{hrIngreso}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="99" y="491" width="511" height="88" uuid="d416c0d2-b45f-454c-9af6-f2197a1aa600"/>
+				<reportElement x="99" y="505" width="511" height="87" uuid="d416c0d2-b45f-454c-9af6-f2197a1aa600"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
-				<text><![CDATA[El (la) lesionado presenta ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________]]></text>
+				<text><![CDATA[_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="99" y="503" width="509" height="74" uuid="05d1acad-5f6a-469d-bbad-d276b2927051"/>
+				<reportElement x="101" y="504" width="509" height="87" uuid="05d1acad-5f6a-469d-bbad-d276b2927051"/>
 				<textFieldExpression><![CDATA[$P{observaciones}]]></textFieldExpression>
 			</textField>
-			<line>
-				<reportElement x="231" y="504" width="376" height="1" uuid="4fe59c61-b75f-4863-a32f-fa0139de5e60"/>
-			</line>
+			<staticText>
+				<reportElement x="99" y="490" width="340" height="20" uuid="1da39603-e1ad-4de8-b43f-37ffe214f3c7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[El (la) lesionado presenta]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<pageFooter>
