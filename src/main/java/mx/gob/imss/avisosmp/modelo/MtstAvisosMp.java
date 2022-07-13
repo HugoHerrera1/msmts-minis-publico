@@ -66,6 +66,9 @@ public class MtstAvisosMp {
     @Column(name = "IND_ACTIVO")
     private Boolean indActivo;
 
+    @Column(name = "ID_ESTADO")
+    private String idEstado;
+
     public Long getId() {
         return id;
     }
@@ -218,4 +221,11 @@ public class MtstAvisosMp {
         this.indActivo = indActivo;
     }
 
+    public String getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(String idEstado) {
+        this.idEstado = idEstado;
+    }
 }

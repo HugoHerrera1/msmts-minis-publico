@@ -6,6 +6,7 @@ import lombok.Data;
 public class DetalleAvisoMp {
 private Integer idAvisoMp;
 private String fechaElaboracion;
+private String estado;
 private String delegacionMunicipio;
 private String agenciaMp;
 private String nombrePaciente;

@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import mx.gob.imss.avisosmp.dto.AvisoMPRequest;
 import mx.gob.imss.avisosmp.dto.AvisosMpList;
 import mx.gob.imss.avisosmp.dto.DetalleAvisoMp;
+import mx.gob.imss.avisosmp.modelo.DelegacionMunicipioModel;
+import mx.gob.imss.avisosmp.modelo.EstadosModel;
 import mx.gob.imss.avisosmp.modelo.MtstAvisosMp;
 import mx.gob.imss.avisosmp.modelo.ServiciosModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 
 @Slf4j
@@ -29,6 +32,7 @@ public class TransformaObjetos {
         SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm:ss");
         Date date = format.parse(avisoMPRequest.getFechaRegistroAviso());
         mp.setFecElaboracion(date);
+        mp.setIdEstado(avisoMPRequest.getIdEstado());
         mp.setDesDelegacionMunicipio(avisoMPRequest.getAlcaldia());
         mp.setDesAgenciaMp(avisoMPRequest.getAgenciaMP());
         mp.setNomPaciente(avisoMPRequest.getNombrePaciente());
@@ -68,7 +72,12 @@ public class TransformaObjetos {
         try {
             detail.setIdAvisoMp(avisosMp.getId().intValue());
             detail.setFechaElaboracion(dateFormat.format(avisosMp.getFecElaboracion()));
-            detail.setDelegacionMunicipio(avisosMp.getDesDelegacionMunicipio());
+            EstadosModel edos = cliente.getEstado(Integer.valueOf(avisosMp.getIdEstado()));
+            String nombreEdo = Objects.isNull(edos) ? "No se encontro registro estados" : edos.getDes_nombre_completo();
+            detail.setEstado(nombreEdo);
+            DelegacionMunicipioModel del = cliente.getDelegacion(Integer.valueOf(avisosMp.getIdEstado()), Integer.valueOf(avisosMp.getDesDelegacionMunicipio()));
+            String nombreDel = Objects.isNull(del) ? "No se encontro registros Delegacion/Municipio" : del.getDes_municipio();
+            detail.setDelegacionMunicipio(nombreDel);
             detail.setAgenciaMp(avisosMp.getDesAgenciaMp());
             detail.setNombrePaciente(avisosMp.getNomPaciente());
             detail.setUnidadMedica(avisosMp.getDesUnidadMedica());

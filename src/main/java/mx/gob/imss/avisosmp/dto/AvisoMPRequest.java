@@ -7,6 +7,7 @@ import lombok.Data;
 @JsonRootName("avisosMP")
 public class AvisoMPRequest {
 private String fechaRegistroAviso;
+private String idEstado;
 private String alcaldia;
 private String agenciaMP;
 private String nombrePaciente;
