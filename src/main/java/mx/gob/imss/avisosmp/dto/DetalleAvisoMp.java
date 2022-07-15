@@ -11,6 +11,7 @@ private String delegacionMunicipio;
 private String agenciaMp;
 private String nombrePaciente;
 private String unidadMedica;
+private String ubicacionHospital;
 private String cveEspecialidad;
 private String especialidad;
 private String cama;

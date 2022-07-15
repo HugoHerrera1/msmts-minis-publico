@@ -27,6 +27,8 @@ public class MtstAvisosMp {
     @Column(name = "DES_UNIDAD_MEDICA", length = 100)
     private String desUnidadMedica;
 
+    @Column(name = "DES_UBICACION_UM", length = 1000)
+    private String desUbicacionUm;
     @Column(name = "CVE_ESPECIALIDAD", length = 100)
     private String cveEspecialidad;
 
@@ -115,6 +117,14 @@ public class MtstAvisosMp {
 
     public void setDesUnidadMedica(String desUnidadMedica) {
         this.desUnidadMedica = desUnidadMedica;
+    }
+
+    public String getDesUbicacionUm() {
+        return desUbicacionUm;
+    }
+
+    public void setDesUbicacionUm(String desUbicacionUm) {
+        this.desUbicacionUm = desUbicacionUm;
     }
 
     public String getCveEspecialidad() {
