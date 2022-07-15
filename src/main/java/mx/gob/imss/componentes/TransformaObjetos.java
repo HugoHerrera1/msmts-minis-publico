@@ -58,6 +58,8 @@ public class TransformaObjetos {
             response.setIdAvisoMp(mtstAvisosMp.getId().intValue());
             response.setNombrePaciente(mtstAvisosMp.getNomPaciente());
             response.setFechaElaboracion(dateFormat.format(mtstAvisosMp.getFecElaboracion()));
+            response.setMedicoTratante(mtstAvisosMp.getNomMedico());
+            response.setTrabajadorSocial(mtstAvisosMp.getNomTrabajadorSocial());
             return response;
         } catch (Exception ex) {
             response.setIdAvisoMp(null);

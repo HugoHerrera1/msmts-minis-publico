@@ -7,4 +7,6 @@ public class AvisosMpList {
     private Integer idAvisoMp;
     private String fechaElaboracion;
     private String nombrePaciente;
+    private String medicoTratante;
+    private String TrabajadorSocial;
 }
