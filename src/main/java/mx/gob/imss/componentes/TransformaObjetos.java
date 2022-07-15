@@ -37,6 +37,7 @@ public class TransformaObjetos {
         mp.setDesAgenciaMp(avisoMPRequest.getAgenciaMP());
         mp.setNomPaciente(avisoMPRequest.getNombrePaciente());
         mp.setDesUnidadMedica(avisoMPRequest.getIdUnidadHospital());
+        mp.setDesUbicacionUm(avisoMPRequest.getUbicacionHospital());
         mp.setCveEspecialidad(avisoMPRequest.getCveServicio());
         mp.setCveCama(avisoMPRequest.getNumCama());
         mp.setFecIngreso(format.parse(avisoMPRequest.getFechaIngreso()));
@@ -81,6 +82,7 @@ public class TransformaObjetos {
             detail.setAgenciaMp(avisosMp.getDesAgenciaMp());
             detail.setNombrePaciente(avisosMp.getNomPaciente());
             detail.setUnidadMedica(avisosMp.getDesUnidadMedica());
+            detail.setUbicacionHospital(avisosMp.getDesUbicacionUm());
             detail.setCveEspecialidad(avisosMp.getCveEspecialidad());
             List<ServiciosModel> servicios = cliente.getServicio(avisosMp.getCveEspecialidad());
             String nombreServicio = servicios.isEmpty() ? "No se encontro registro" : servicios.get(0).getDes_especialidad();
