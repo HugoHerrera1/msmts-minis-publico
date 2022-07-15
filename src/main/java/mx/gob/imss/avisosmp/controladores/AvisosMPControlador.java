@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping("/msmts-avisos-mp/api")
+@RequestMapping("/msmts-minis-publico/api")
 public class AvisosMPControlador {
   
 	@Autowired
