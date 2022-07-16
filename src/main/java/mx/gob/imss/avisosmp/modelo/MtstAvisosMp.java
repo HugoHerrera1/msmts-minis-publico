@@ -5,7 +5,7 @@ import java.util.Date;
 import java.sql.Time;
 
 @Entity
-@Table(name = "mtst_avisos_mp")
+@Table(name = "MTST_AVISOS_MP")
 public class MtstAvisosMp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
