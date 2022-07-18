@@ -44,9 +44,9 @@ public class TransformaObjetos {
         mp.setTimIngreso(new Time(formatTime.parse(avisoMPRequest.getHoraIngreso()).getTime()));
         mp.setDesLesionesPaciente(avisoMPRequest.getLesionesPaciente());
         mp.setNomMedico(avisoMPRequest.getNombreMedicoTratante());
-        mp.setDesMatriculaMedico(avisoMPRequest.getMatriculaMedicoTratante());
+        mp.setCveMatriculaMedico(avisoMPRequest.getMatriculaMedicoTratante());
         mp.setNomTrabajadorSocial(avisoMPRequest.getNombreTrabajadorSocial());
-        mp.setDesMatriculaTs(avisoMPRequest.getMatriculaTrabajadorSocial());
+        mp.setCveMatriculaTs(avisoMPRequest.getMatriculaTrabajadorSocial());
         mp.setIndActivo(true);
         return mp;
     }
@@ -94,9 +94,9 @@ public class TransformaObjetos {
             detail.setHoraIngreso(avisosMp.getTimIngreso().toString());
             detail.setLesionesPaciente(avisosMp.getDesLesionesPaciente());
             detail.setNombreMedico(avisosMp.getNomMedico());
-            detail.setMatriculaMedico(avisosMp.getDesMatriculaMedico());
+            detail.setMatriculaMedico(avisosMp.getCveMatriculaMedico());
             detail.setNombreTrabajadorSocial(avisosMp.getNomTrabajadorSocial());
-            detail.setMatriculaTrabajadorSocial(avisosMp.getDesMatriculaTs());
+            detail.setMatriculaTrabajadorSocial(avisosMp.getCveMatriculaTs());
             return detail;
         } catch (Exception e) {
             return new DetalleAvisoMp();

@@ -1,6 +1,7 @@
 package mx.gob.imss.avisosmp.modelo;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.sql.Time;
 
@@ -47,14 +48,8 @@ public class MtstAvisosMp {
     @Column(name = "NOM_MEDICO", length = 100)
     private String nomMedico;
 
-    @Column(name = "DES_MATRICULA_MEDICO", length = 100)
-    private String desMatriculaMedico;
-
     @Column(name = "NOM_TRABAJADOR_SOCIAL", length = 100)
     private String nomTrabajadorSocial;
-
-    @Column(name = "DES_MATRICULA_TS", length = 100)
-    private String desMatriculaTs;
 
     @Column(name = "FEC_ALTA")
     private Date fecAlta;
@@ -70,6 +65,39 @@ public class MtstAvisosMp {
 
     @Column(name = "ID_ESTADO")
     private String idEstado;
+
+    @Column(name = "CVE_MATRICULA_MEDICO", length = 100)
+    private String cveMatriculaMedico;
+
+    @Column(name = "CVE_MATRICULA_TS", length = 100)
+    private String cveMatriculaTs;
+
+    @Column(name = "FEC_EXPIRA")
+    private Date fecExpira;
+
+    public Date getFecExpira() {
+        return fecExpira;
+    }
+
+    public void setFecExpira(Date fecExpira) {
+        this.fecExpira = fecExpira;
+    }
+
+    public String getCveMatriculaTs() {
+        return cveMatriculaTs;
+    }
+
+    public void setCveMatriculaTs(String cveMatriculaTs) {
+        this.cveMatriculaTs = cveMatriculaTs;
+    }
+
+    public String getCveMatriculaMedico() {
+        return cveMatriculaMedico;
+    }
+
+    public void setCveMatriculaMedico(String cveMatriculaMedico) {
+        this.cveMatriculaMedico = cveMatriculaMedico;
+    }
 
     public Long getId() {
         return id;
@@ -174,29 +202,12 @@ public class MtstAvisosMp {
     public void setNomMedico(String nomMedico) {
         this.nomMedico = nomMedico;
     }
-
-    public String getDesMatriculaMedico() {
-        return desMatriculaMedico;
-    }
-
-    public void setDesMatriculaMedico(String desMatriculaMedico) {
-        this.desMatriculaMedico = desMatriculaMedico;
-    }
-
     public String getNomTrabajadorSocial() {
         return nomTrabajadorSocial;
     }
 
     public void setNomTrabajadorSocial(String nomTrabajadorSocial) {
         this.nomTrabajadorSocial = nomTrabajadorSocial;
-    }
-
-    public String getDesMatriculaTs() {
-        return desMatriculaTs;
-    }
-
-    public void setDesMatriculaTs(String desMatriculaTs) {
-        this.desMatriculaTs = desMatriculaTs;
     }
 
     public Date getFecAlta() {
