@@ -68,6 +68,15 @@ public class AvisosMPControlador {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=Reporte_AvisosMP.pdf")
                 .contentType(MediaType.APPLICATION_OCTET_STREAM).contentLength(filePdf.length).body(resource);
     }
+
+    @GetMapping(path = "/findAvisosMpAdmin/{fechaInicial}/{fechaFinal}", produces = "application/json")
+    public ResponseEntity findAvisosAdministracion(@PathVariable String fechaInicial, @PathVariable String fechaFinal) {
+        try {
+            return new ResponseEntity(avisosServices.findAvisosAdministracion(fechaInicial, fechaFinal), HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
     
 }
 

@@ -2,6 +2,7 @@ package mx.gob.imss.componentes;
 
 import lombok.extern.slf4j.Slf4j;
 import mx.gob.imss.avisosmp.dto.AvisoMPRequest;
+import mx.gob.imss.avisosmp.dto.AvisosAdmon;
 import mx.gob.imss.avisosmp.dto.AvisosMpList;
 import mx.gob.imss.avisosmp.dto.DetalleAvisoMp;
 import mx.gob.imss.avisosmp.modelo.DelegacionMunicipioModel;
@@ -36,6 +37,7 @@ public class TransformaObjetos {
         mp.setDesDelegacionMunicipio(avisoMPRequest.getAlcaldia());
         mp.setDesAgenciaMp(avisoMPRequest.getAgenciaMP());
         mp.setNomPaciente(avisoMPRequest.getNombrePaciente());
+        mp.setDesNss(avisoMPRequest.getDesNss());
         mp.setDesUnidadMedica(avisoMPRequest.getIdUnidadHospital());
         mp.setDesUbicacionUm(avisoMPRequest.getUbicacionHospital());
         mp.setCveEspecialidad(avisoMPRequest.getCveServicio());
@@ -69,6 +71,25 @@ public class TransformaObjetos {
         }
     }
 
+    public AvisosAdmon buildResponseAdmon(MtstAvisosMp mtstAvisosMp) {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        AvisosAdmon response = new AvisosAdmon();
+        try {
+            response.setIdAvisoMp(mtstAvisosMp.getId().intValue());
+            response.setNombrePaciente(mtstAvisosMp.getNomPaciente());
+            response.setFechaElaboracion(dateFormat.format(mtstAvisosMp.getFecElaboracion()));
+            response.setMedicoTratante(mtstAvisosMp.getNomMedico());
+            response.setTrabajadorSocial(mtstAvisosMp.getNomTrabajadorSocial());
+            response.setNss(mtstAvisosMp.getDesNss());
+            return response;
+        } catch (Exception ex) {
+            response.setIdAvisoMp(null);
+            response.setNombrePaciente("");
+            response.setFechaElaboracion("");
+            return response;
+        }
+    }
+
     public DetalleAvisoMp buildDetalleResponse(MtstAvisosMp avisosMp) {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         DetalleAvisoMp detail = new DetalleAvisoMp();
@@ -83,6 +104,7 @@ public class TransformaObjetos {
             detail.setDelegacionMunicipio(nombreDel);
             detail.setAgenciaMp(avisosMp.getDesAgenciaMp());
             detail.setNombrePaciente(avisosMp.getNomPaciente());
+            detail.setDesNss(avisosMp.getDesNss());
             detail.setUnidadMedica(avisosMp.getDesUnidadMedica());
             detail.setUbicacionHospital(avisosMp.getDesUbicacionUm());
             detail.setCveEspecialidad(avisosMp.getCveEspecialidad());

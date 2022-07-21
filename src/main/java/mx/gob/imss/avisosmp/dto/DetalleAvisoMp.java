@@ -10,6 +10,7 @@ private String estado;
 private String delegacionMunicipio;
 private String agenciaMp;
 private String nombrePaciente;
+private String desNss;
 private String unidadMedica;
 private String ubicacionHospital;
 private String cveEspecialidad;

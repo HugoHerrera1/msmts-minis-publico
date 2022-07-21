@@ -11,6 +11,7 @@ private String idEstado;
 private String alcaldia;
 private String agenciaMP;
 private String nombrePaciente;
+private String desNss;
 private String idUnidadHospital;
 private String ubicacionHospital;
 private String cveServicio;
