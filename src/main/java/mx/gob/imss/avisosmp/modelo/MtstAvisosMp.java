@@ -75,6 +75,17 @@ public class MtstAvisosMp {
     @Column(name = "FEC_EXPIRA")
     private Date fecExpira;
 
+    @Column(name = "DES_NSS", length = 20)
+    private String desNss;
+
+    public String getDesNss() {
+        return desNss;
+    }
+
+    public void setDesNss(String desNss) {
+        this.desNss = desNss;
+    }
+
     public Date getFecExpira() {
         return fecExpira;
     }

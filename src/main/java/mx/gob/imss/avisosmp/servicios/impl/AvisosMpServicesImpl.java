@@ -61,6 +61,27 @@ public class AvisosMpServicesImpl implements AvisosMpServices {
     }
 
     @Override
+    public String findAvisosAdministracion(String fechaInicio, String fechaFin) {
+        ConsultaAdmon avisosMpAdmon = new ConsultaAdmon();
+        try {
+            List<AvisosAdmon> avisosMpLists = new ArrayList<>();
+            List<MtstAvisosMp> mtstAvisosMpList = avisosMpRepo.findAvisosMp(fechaInicio, fechaFin);
+            for (MtstAvisosMp volantes : mtstAvisosMpList) {
+                avisosMpLists.add(transform.buildResponseAdmon(volantes));
+            }
+            avisosMpAdmon.setStatus("OK");
+            avisosMpAdmon.setMensaje("Operación correcta");
+            avisosMpAdmon.setDatosAvisosMp(avisosMpLists);
+            return jsonResponse.toJson(avisosMpAdmon);
+        } catch (Exception e) {
+            avisosMpAdmon.setStatus("Error");
+            avisosMpAdmon.setMensaje(e.getMessage());
+            avisosMpAdmon.setDatosAvisosMp(new ArrayList<>());
+            return jsonResponse.toJson(avisosMpAdmon);
+        }
+    }
+
+    @Override
     public String findAvisosById(Integer idAviso) {
         ConsultaVolanteIdResponse consultaID = new ConsultaVolanteIdResponse();
         try {
