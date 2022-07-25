@@ -10,6 +10,7 @@ import net.sf.jasperreports.engine.JRException;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -31,6 +32,8 @@ public class AvisosMPControlador {
 
     @PostMapping(value = "/insertAvisoMP", produces = "application/json",
             consumes = "application/json")
+    @CacheEvict(value={"avisosMpfindAvisosMp","avisosMpFindAvisosMpById","servicios","edos",
+    "delegacion"},  allEntries = true)
     public ResponseEntity guardaAvisoMP(@RequestBody AvisoMPRequest avisoMp) {
         try {
             return new ResponseEntity(avisosServices.insertAvisoMp(avisoMp), HttpStatus.OK);
