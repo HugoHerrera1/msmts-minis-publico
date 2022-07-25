@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_AvisoMP" language="groovy" pageWidth="740" pageHeight="995" columnWidth="700" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="bd7344d4-d6bc-42f4-a76f-07fb5e111a15">
-	<property name="ireport.zoom" value="2.1435888100000224"/>
+	<property name="ireport.zoom" value="1.7715610000000193"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1237"/>
+	<property name="ireport.y" value="880"/>
 	<parameter name="estado" class="java.lang.String"/>
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
@@ -28,7 +28,7 @@
 	<detail>
 		<band height="900" splitType="Stretch">
 			<rectangle>
-				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="22" y="73" width="651" height="742" uuid="b9d31146-2c9a-4a6c-9686-6b0b51f896c0"/>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="73" y="85" width="563" height="681" uuid="7e5431b2-d746-425b-96d7-846d6185f71d"/>
 				<graphicElement>
 					<pen lineWidth="1.5"/>
 				</graphicElement>
@@ -59,21 +59,21 @@
 				<text><![CDATA[Aviso a ministerio Público]]></text>
 			</staticText>
 			<line>
-				<reportElement x="95" y="252" width="179" height="1" uuid="4ae25cb6-ff9d-47f5-a521-0ea18fcf9478"/>
+				<reportElement x="95" y="252" width="225" height="1" uuid="4ae25cb6-ff9d-47f5-a521-0ea18fcf9478"/>
 			</line>
 			<staticText>
-				<reportElement x="276" y="241" width="9" height="20" uuid="388259b4-9a3b-4f80-8be3-8137a614707b"/>
+				<reportElement x="325" y="241" width="9" height="20" uuid="388259b4-9a3b-4f80-8be3-8137a614707b"/>
 				<text><![CDATA[a]]></text>
 			</staticText>
 			<line>
-				<reportElement x="285" y="252" width="85" height="1" uuid="15c8c2c1-5c88-4e68-bb42-7aa933a69b11"/>
+				<reportElement x="336" y="252" width="57" height="1" uuid="15c8c2c1-5c88-4e68-bb42-7aa933a69b11"/>
 			</line>
 			<staticText>
-				<reportElement x="372" y="241" width="15" height="13" uuid="20aaeff4-04e4-4e5d-997a-cc57ddc913e5"/>
+				<reportElement x="398" y="241" width="15" height="13" uuid="20aaeff4-04e4-4e5d-997a-cc57ddc913e5"/>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
-				<reportElement x="387" y="252" width="110" height="1" uuid="a442c5e2-4240-4f39-bd0f-3efbe0751b0b"/>
+				<reportElement x="412" y="252" width="85" height="1" uuid="a442c5e2-4240-4f39-bd0f-3efbe0751b0b"/>
 			</line>
 			<staticText>
 				<reportElement x="498" y="241" width="17" height="20" uuid="01bd8eec-f212-49c8-b23d-7aab6b48da89"/>
@@ -88,10 +88,10 @@
 			</staticText>
 			<staticText>
 				<reportElement x="95" y="289" width="142" height="20" uuid="45c9254e-063e-44f4-a5fe-999b5ad06a42"/>
-				<text><![CDATA[de la CD/alcaldía]]></text>
+				<text><![CDATA[de la ciudad/alcaldía]]></text>
 			</staticText>
 			<line>
-				<reportElement x="181" y="302" width="421" height="1" uuid="36cf000c-04c8-42e4-bfa5-f5ff299a8d4c"/>
+				<reportElement x="192" y="302" width="410" height="1" uuid="36cf000c-04c8-42e4-bfa5-f5ff299a8d4c"/>
 			</line>
 			<staticText>
 				<reportElement x="260" y="326" width="61" height="20" uuid="cc55c518-392c-4b77-9c0d-fec36ab7826b"/>
@@ -109,82 +109,83 @@
 				<text><![CDATA[P R E S E N T E:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="390" width="573" height="106" uuid="c7e7f51d-64bd-4c8e-a739-17bf7d94f2cf"/>
+				<reportElement x="100" y="390" width="600" height="143" uuid="c7e7f51d-64bd-4c8e-a739-17bf7d94f2cf"/>
 				<textElement>
 					<font size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[De acuerdo con lo dispuesto en la Fiscalía General de Justicia de                            y Territorios
-Federales, pongo a disposición __________________________________________________
+				<text><![CDATA[De acuerdo con lo dispuesto en la Fiscalía General de Justicia de
+y Territorios Federales, pongo a disposición _______________________________________
 _____________ derechohabiente del Instituto Mexicano del Seguro Social, quien se encuentra
-internado en el Hospital: ________________________________________________________
-ubicado en ____________________________ en el servicio de_________________________
-en la cama ___________________ con fecha y hora de ingreso ________________________]]></text>
+internado en el Hospital: _______________________________________________________
+ubicado en __________________________________________________________________
+en el servicio de______________________________________________________________
+en la cama ___________ con fecha y hora de ingreso ________________________________]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="274" y="405" width="307" height="20" uuid="72f97919-186b-4a0b-9f38-e209af668dc2"/>
+				<reportElement x="334" y="406" width="294" height="20" uuid="72f97919-186b-4a0b-9f38-e209af668dc2"/>
 				<textElement>
-					<font size="11"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nombrePac}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="237" y="434" width="328" height="20" uuid="12d901b3-c0e0-4114-9e33-956fad5a9357"/>
+				<reportElement x="237" y="438" width="365" height="20" uuid="12d901b3-c0e0-4114-9e33-956fad5a9357"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nombreHosp}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="165" y="447" width="190" height="20" uuid="9bdb8079-7fb9-428c-89c2-f2a7d3518998"/>
+				<reportElement x="165" y="453" width="437" height="20" uuid="9bdb8079-7fb9-428c-89c2-f2a7d3518998"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{ubicacionHosp}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="448" y="447" width="160" height="20" uuid="36e3d732-b583-4d2c-bb9e-a804a8d36aa2"/>
+				<reportElement x="192" y="468" width="410" height="20" uuid="36e3d732-b583-4d2c-bb9e-a804a8d36aa2"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{servicio}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="164" y="462" width="132" height="20" uuid="41d7175f-2034-4b86-bf84-cfd804b7d1d6"/>
-				<textElement>
+				<reportElement x="161" y="483" width="76" height="20" uuid="41d7175f-2034-4b86-bf84-cfd804b7d1d6"/>
+				<textElement textAlignment="Center">
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cama}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="448" y="461" width="90" height="20" uuid="c49d3a03-e9ee-4119-96e3-36c1720ea119"/>
+				<reportElement x="393" y="484" width="121" height="20" uuid="c49d3a03-e9ee-4119-96e3-36c1720ea119"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{fecIngreso}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="181" y="288" width="333" height="20" uuid="7dc344d6-6fa2-4af2-9c38-646f80c2ae15"/>
+				<reportElement x="197" y="288" width="405" height="20" uuid="7dc344d6-6fa2-4af2-9c38-646f80c2ae15"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{alcaldia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="96" y="239" width="180" height="20" uuid="feddc485-fa12-4278-b09d-9bc3ea5145a7"/>
+				<reportElement x="96" y="239" width="224" height="20" uuid="feddc485-fa12-4278-b09d-9bc3ea5145a7"/>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{estado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="285" y="239" width="78" height="20" uuid="9f2de0bf-e657-4f58-8fd7-6747c7ce1313"/>
+				<reportElement x="325" y="239" width="78" height="20" uuid="9f2de0bf-e657-4f58-8fd7-6747c7ce1313"/>
 				<textElement textAlignment="Center">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="388" y="239" width="110" height="20" uuid="e3e98a72-1409-4666-8c0a-d91781256a1a"/>
+				<reportElement x="410" y="239" width="86" height="20" uuid="e3e98a72-1409-4666-8c0a-d91781256a1a"/>
 				<textElement textAlignment="Center">
 					<font size="12"/>
 				</textElement>
@@ -236,29 +237,28 @@ en la cama ___________________ con fecha y hora de ingreso _____________________
 				<textFieldExpression><![CDATA[$P{matTS}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="535" y="461" width="93" height="20" uuid="5a567ead-8b10-4be5-9221-6a808a99198f"/>
+				<reportElement x="511" y="484" width="93" height="20" uuid="5a567ead-8b10-4be5-9221-6a808a99198f"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{hrIngreso}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="101" y="504" width="509" height="87" uuid="05d1acad-5f6a-469d-bbad-d276b2927051"/>
+				<reportElement x="101" y="520" width="509" height="76" uuid="05d1acad-5f6a-469d-bbad-d276b2927051"/>
 				<textElement textAlignment="Justified">
 					<font isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{observaciones}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="99" y="490" width="340" height="20" uuid="1da39603-e1ad-4de8-b43f-37ffe214f3c7"/>
+				<reportElement x="99" y="506" width="340" height="20" uuid="1da39603-e1ad-4de8-b43f-37ffe214f3c7"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<text><![CDATA[El (la) lesionado presenta]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="448" y="391" width="93" height="15" uuid="8467d7e9-0ca3-4cf2-b091-2fd2870eeb04"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="450" y="391" width="223" height="15" uuid="8467d7e9-0ca3-4cf2-b091-2fd2870eeb04"/>
 				<textFieldExpression><![CDATA[$P{estado}]]></textFieldExpression>
 			</textField>
 			<elementGroup>
@@ -305,7 +305,7 @@ en la cama ___________________ con fecha y hora de ingreso _____________________
 			</staticText>
 			<elementGroup>
 				<rectangle>
-					<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="73" y="85" width="563" height="681" uuid="7e5431b2-d746-425b-96d7-846d6185f71d"/>
+					<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="22" y="73" width="651" height="742" uuid="b9d31146-2c9a-4a6c-9686-6b0b51f896c0"/>
 					<graphicElement>
 						<pen lineWidth="1.5"/>
 					</graphicElement>
