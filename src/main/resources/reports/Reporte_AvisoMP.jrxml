@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_AvisoMP" language="groovy" pageWidth="740" pageHeight="995" columnWidth="700" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="bd7344d4-d6bc-42f4-a76f-07fb5e111a15">
 	<property name="ireport.zoom" value="1.7715610000000197"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="880"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="estado" class="java.lang.String"/>
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
@@ -177,28 +177,28 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<textFieldExpression><![CDATA[$P{alcaldia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="96" y="239" width="224" height="20" uuid="feddc485-fa12-4278-b09d-9bc3ea5145a7"/>
+				<reportElement x="96" y="238" width="224" height="20" uuid="feddc485-fa12-4278-b09d-9bc3ea5145a7"/>
 				<textElement>
-					<font size="10"/>
+					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{estado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="325" y="239" width="78" height="20" uuid="9f2de0bf-e657-4f58-8fd7-6747c7ce1313"/>
+				<reportElement x="325" y="238" width="78" height="20" uuid="9f2de0bf-e657-4f58-8fd7-6747c7ce1313"/>
 				<textElement textAlignment="Center">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="410" y="240" width="86" height="20" uuid="e3e98a72-1409-4666-8c0a-d91781256a1a"/>
+				<reportElement x="410" y="239" width="86" height="20" uuid="e3e98a72-1409-4666-8c0a-d91781256a1a"/>
 				<textElement textAlignment="Center">
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="515" y="239" width="93" height="20" uuid="1e0d4067-9da8-4c6e-99cc-35163df157bb"/>
+				<reportElement x="515" y="238" width="93" height="20" uuid="1e0d4067-9da8-4c6e-99cc-35163df157bb"/>
 				<textElement textAlignment="Center">
 					<font size="12"/>
 				</textElement>
@@ -226,7 +226,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<text><![CDATA[Matrícula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="423" y="655" width="142" height="29" uuid="0d1fc112-5407-41eb-abf9-31991bebb5bb"/>
+				<reportElement positionType="Float" x="423" y="653" width="142" height="29" uuid="0d1fc112-5407-41eb-abf9-31991bebb5bb"/>
 				<text><![CDATA[Nombre, firma y matrícula personal de trabajo social]]></text>
 			</staticText>
 			<textField>
