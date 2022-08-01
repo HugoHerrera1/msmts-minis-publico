@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_AvisoMP" language="groovy" pageWidth="740" pageHeight="995" columnWidth="700" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="bd7344d4-d6bc-42f4-a76f-07fb5e111a15">
-	<property name="ireport.zoom" value="2.3579476910000268"/>
+	<property name="ireport.zoom" value="2.143588810000025"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="530"/>
+	<property name="ireport.y" value="443"/>
 	<parameter name="estado" class="java.lang.String"/>
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
@@ -28,13 +28,13 @@
 	<detail>
 		<band height="900" splitType="Stretch">
 			<rectangle>
-				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="24" y="73" width="655" height="742" uuid="b9d31146-2c9a-4a6c-9686-6b0b51f896c0"/>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="74" y="85" width="559" height="681" uuid="7e5431b2-d746-425b-96d7-846d6185f71d"/>
 				<graphicElement>
 					<pen lineWidth="1.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="74" y="85" width="559" height="681" uuid="7e5431b2-d746-425b-96d7-846d6185f71d"/>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="24" y="73" width="655" height="742" uuid="b9d31146-2c9a-4a6c-9686-6b0b51f896c0"/>
 				<graphicElement>
 					<pen lineWidth="1.5"/>
 				</graphicElement>
@@ -103,14 +103,20 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 			</line>
 			<staticText>
 				<reportElement x="95" y="271" width="175" height="20" uuid="10543061-f907-411d-a1b9-51ace3562fe9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Al C. Agente del Ministerio Público]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="95" y="289" width="142" height="20" uuid="45c9254e-063e-44f4-a5fe-999b5ad06a42"/>
-				<text><![CDATA[del Municipio/Alcaldía]]></text>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[de la Alcaldía y/o Municipio]]></text>
 			</staticText>
 			<line>
-				<reportElement x="198" y="300" width="402" height="1" uuid="36cf000c-04c8-42e4-bfa5-f5ff299a8d4c"/>
+				<reportElement x="231" y="300" width="371" height="1" uuid="36cf000c-04c8-42e4-bfa5-f5ff299a8d4c"/>
 			</line>
 			<staticText>
 				<reportElement x="260" y="326" width="61" height="20" uuid="cc55c518-392c-4b77-9c0d-fec36ab7826b"/>
@@ -170,7 +176,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<textFieldExpression><![CDATA[$P{fecIngreso}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="197" y="286" width="398" height="20" uuid="7dc344d6-6fa2-4af2-9c38-646f80c2ae15"/>
+				<reportElement x="230" y="286" width="398" height="20" uuid="7dc344d6-6fa2-4af2-9c38-646f80c2ae15"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
