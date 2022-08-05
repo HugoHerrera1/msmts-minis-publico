@@ -12,4 +12,6 @@ public interface AvisosMpServices {
     String findAvisosAdministracion(String fechaInicio, String fechaFin);
 
     String findAvisosById(Integer idAviso);
+
+    String evictAllcaches();
 }

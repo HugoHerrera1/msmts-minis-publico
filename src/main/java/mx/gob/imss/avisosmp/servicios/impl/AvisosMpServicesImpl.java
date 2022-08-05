@@ -8,10 +8,12 @@ import mx.gob.imss.avisosmp.repositorios.AvisosMpRepository;
 import mx.gob.imss.avisosmp.servicios.AvisosMpServices;
 import mx.gob.imss.componentes.TransformaObjetos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
@@ -21,6 +23,8 @@ public class AvisosMpServicesImpl implements AvisosMpServices {
     @Autowired
     TransformaObjetos transform;
     Gson jsonResponse = new Gson();
+    @Autowired
+    CacheManager cacheManager;
 
     @Override
     public String insertAvisoMp(AvisoMPRequest avisoMp) {
@@ -96,6 +100,20 @@ public class AvisosMpServicesImpl implements AvisosMpServices {
             consultaID.setMensaje(e.getMessage());
             consultaID.setDatosAvisoMp(new DetalleAvisoMp());
             return jsonResponse.toJson(consultaID);
+        }
+    }
+
+    public String evictAllcaches() {
+        try {
+            cacheManager.getCacheNames()
+                    .forEach(cacheName -> Objects.requireNonNull(cacheManager.getCache(cacheName)).clear());
+            return "Memoria cache borrada correctamente";
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            return "Error al borrar memoria cache";
+
         }
     }
 }

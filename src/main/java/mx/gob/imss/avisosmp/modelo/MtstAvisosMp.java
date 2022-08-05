@@ -1,9 +1,8 @@
 package mx.gob.imss.avisosmp.modelo;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
 import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name = "MTST_AVISOS_MP")
