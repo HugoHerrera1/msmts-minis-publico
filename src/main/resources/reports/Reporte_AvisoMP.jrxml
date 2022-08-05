@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_AvisoMP" language="groovy" pageWidth="675" pageHeight="995" columnWidth="635" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="bd7344d4-d6bc-42f4-a76f-07fb5e111a15">
 	<property name="ireport.zoom" value="1.948717100000024"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="676"/>
 	<parameter name="estado" class="java.lang.String"/>
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
@@ -93,7 +93,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<text><![CDATA[Al C. Agente del Ministerio Público]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="157" width="142" height="20" uuid="45c9254e-063e-44f4-a5fe-999b5ad06a42"/>
+				<reportElement x="32" y="157" width="249" height="20" uuid="45c9254e-063e-44f4-a5fe-999b5ad06a42"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
@@ -110,7 +110,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<text><![CDATA[ASUNTO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="257" y="196" width="292" height="20" uuid="9b18c478-4ced-4368-871e-1bc527b9f400"/>
+				<reportElement x="257" y="195" width="292" height="20" uuid="9b18c478-4ced-4368-871e-1bc527b9f400"/>
 				<text><![CDATA[Notificación del lesionado]]></text>
 			</staticText>
 			<staticText>
@@ -125,7 +125,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<textFieldExpression><![CDATA[$P{nombrePac}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="39" y="294" width="142" height="20" uuid="12d901b3-c0e0-4114-9e33-956fad5a9357"/>
+				<reportElement x="39" y="293" width="142" height="20" uuid="12d901b3-c0e0-4114-9e33-956fad5a9357"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
@@ -255,7 +255,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				<text><![CDATA[El (la) lesionado presenta]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="359" y="254" width="223" height="15" uuid="8467d7e9-0ca3-4cf2-b091-2fd2870eeb04"/>
+				<reportElement x="360" y="254" width="223" height="15" uuid="8467d7e9-0ca3-4cf2-b091-2fd2870eeb04"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
@@ -267,7 +267,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				</line>
 			</elementGroup>
 			<staticText>
-				<reportElement positionType="Float" x="308" y="648" width="17" height="20" uuid="2c3d9a54-24ee-49c2-ae47-5cabbf623ed3"/>
+				<reportElement positionType="Float" x="307" y="648" width="17" height="20" uuid="2c3d9a54-24ee-49c2-ae47-5cabbf623ed3"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -289,7 +289,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 			</textField>
 			<elementGroup>
 				<staticText>
-					<reportElement positionType="Float" x="439" y="579" width="126" height="20" uuid="b82644e6-47db-484f-9dce-d16753590c24"/>
+					<reportElement positionType="Float" x="466" y="579" width="126" height="20" uuid="b82644e6-47db-484f-9dce-d16753590c24"/>
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
@@ -297,7 +297,7 @@ en la cama ______ con fecha y hora de ingreso __________________________________
 				</staticText>
 			</elementGroup>
 			<staticText>
-				<reportElement positionType="Float" x="460" y="662" width="154" height="20" uuid="0797243c-8baa-42c1-a6f4-df64e19c6be8"/>
+				<reportElement positionType="Float" x="458" y="662" width="154" height="20" uuid="0797243c-8baa-42c1-a6f4-df64e19c6be8"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
