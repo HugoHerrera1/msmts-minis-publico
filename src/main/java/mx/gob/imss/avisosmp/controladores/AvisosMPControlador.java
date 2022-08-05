@@ -6,9 +6,6 @@ import mx.gob.imss.avisosmp.dto.ReporteAvisosMPDto;
 import mx.gob.imss.avisosmp.servicios.AvisosMpServices;
 import mx.gob.imss.avisosmp.servicios.ReporteAvisosMPServicio;
 import net.sf.jasperreports.engine.JRException;
-
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.core.io.ByteArrayResource;
@@ -19,21 +16,22 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @Slf4j
 @RestController
 @RequestMapping("/msmts-minis-publico/api")
 public class AvisosMPControlador {
-  
-	@Autowired
-    AvisosMpServices avisosServices;
-    
+
     @Autowired
-	private ReporteAvisosMPServicio reporteAvisosMPServicio;
+    AvisosMpServices avisosServices;
+
+    @Autowired
+    private ReporteAvisosMPServicio reporteAvisosMPServicio;
 
     @PostMapping(value = "/insertAvisoMP", produces = "application/json",
             consumes = "application/json")
-    @CacheEvict(value={"avisosMpfindAvisosMp","avisosMpFindAvisosMpById","servicios","edos",
-    "delegacion"},  allEntries = true)
+    @CacheEvict(value = {"avisosMpfindAvisosMp", "avisosMpFindAvisosMpById"}, allEntries = true)
     public ResponseEntity guardaAvisoMP(@RequestBody AvisoMPRequest avisoMp) {
         try {
             return new ResponseEntity(avisosServices.insertAvisoMp(avisoMp), HttpStatus.OK);
@@ -80,7 +78,14 @@ public class AvisosMPControlador {
             return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-    
+
+    @GetMapping(value = "/evictallcaches", produces = "application/json")
+    public ResponseEntity<String> evictAllcaches() {
+
+        return new ResponseEntity<>(avisosServices.evictAllcaches(), HttpStatus.OK);
+
+    }
+
 }
 
 
