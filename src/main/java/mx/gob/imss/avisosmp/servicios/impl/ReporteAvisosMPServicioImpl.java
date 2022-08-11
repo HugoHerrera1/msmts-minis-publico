@@ -20,7 +20,7 @@ public class ReporteAvisosMPServicioImpl implements ReporteAvisosMPServicio {
 	
 	 @SuppressWarnings("finally")
 	public byte[] imprimeAvisosMP (ReporteAvisosMPDto reporte) {
-		Map<String, Object> parameters = new HashMap<String, Object>();
+		Map<String, Object> parameters = new HashMap<>();
 		byte[] filePdf = new byte [0];
 		
 		 parameters.put("estado", reporte.getEstado());
